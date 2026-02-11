@@ -9,34 +9,13 @@
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<!-- BOTÓN WHATSAPP FLOTANTE -->
-<a href="https://wa.me/549XXXXXXXXXX"
-  class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3
-       bg-green-500 hover:bg-green-400 text-white
-       px-5 py-3 rounded-full shadow-xl transition"
-
-  <svg xmlns="http://www.w3.org/2000/svg"
-       class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-    <path d="M12.04 2C6.58 2 2.16 6.42 2.16 11.88c0 2.09.55 4.13 1.6 5.94L2 22l4.33-1.71a9.85 9.85 0 005.7 1.79h.01c5.46 0 9.88-4.42 9.88-9.88C21.92 6.42 17.5 2 12.04 2z"/>
-  </svg>
-
-  <span class="font-semibold">¡Hablemos!</span>
-</a>
-
 <style>
 body { font-family: 'Inter', sans-serif; }
 
-/* ===== ESTILOS EXISTENTES ===== */
 .animated-bg {
   background: radial-gradient(circle at 20% 20%, #0ea5e955, transparent 40%),
               radial-gradient(circle at 80% 80%, #0284c755, transparent 40%),
               #020617;
-  /* animación desactivada por rendimiento */
-}
-
-@keyframes moveBg {
-  0% { background-position: 0% 0%; }
-  100% { background-position: 100% 100%; }
 }
 
 .glass {
@@ -49,166 +28,156 @@ body { font-family: 'Inter', sans-serif; }
   filter: drop-shadow(0 35px 45px rgba(14,165,233,.35))
           drop-shadow(0 15px 30px rgba(0,0,0,.7));
 }
-
-/* ===== SOLO CARRUSEL ===== */
-.coverflow {
-  perspective: 1200px;
-  overflow: hidden;
-}
-.coverflow-track {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  height: 240px;
-}
-.coverflow-item {
-  position: absolute;
-  width: 320px;
-  height: 200px;
-  transition: transform .6s ease, opacity .6s ease;
-}
-.coverflow-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 18px;
-}
 </style>
 </head>
 
 <body class="animated-bg text-white overflow-x-hidden">
 
-<header class="container mx-auto px-6 py-6 flex justify-end gap-4">
+<!-- WHATSAPP -->
+<a href="https://wa.me/549XXXXXXXXXX"
+  class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3
+       bg-green-500 hover:bg-green-400 text-white
+       px-5 py-3 rounded-full shadow-xl transition">
+
+  <svg xmlns="http://www.w3.org/2000/svg"
+       class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M12.04 2C6.58 2 2.16 6.42 2.16 11.88c0 2.09.55 4.13 1.6 5.94L2 22l4.33-1.71a9.85 9.85 0 005.7 1.79h.01c5.46 0 9.88-4.42 9.88-9.88C21.92 6.42 17.5 2 12.04 2z"/>
+  </svg>
+
+  <span class="font-semibold text-sm md:text-base">¡Hablemos!</span>
+</a>
+
+<!-- HEADER -->
+<header class="container mx-auto px-6 py-6 flex flex-col md:flex-row justify-end items-center gap-4">
 
   <a href="#clientes"
      class="px-6 py-2 rounded-full border border-sky-400 text-sky-400
-            hover:bg-sky-400 hover:text-black transition">
+            hover:bg-sky-400 hover:text-black transition text-sm md:text-base">
      Nuestros clientes
   </a>
 
   <a href="#contacto"
-     class="px-6 py-2 rounded-full bg-sky-500 hover:bg-sky-400 transition shadow-lg shadow-sky-500/20">
+     class="px-6 py-2 rounded-full bg-sky-500 hover:bg-sky-400 transition shadow-lg shadow-sky-500/20 text-sm md:text-base">
      Solicitar presupuesto
   </a>
 
 </header>
 
 <!-- HERO -->
-<section class="container mx-auto px-6 py-32">
-  <div class="glass rounded-3xl p-16 grid md:grid-cols-2 gap-20 items-center">
-  <div data-aos="fade-right">
-    <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+<section class="container mx-auto px-6 py-20 md:py-32">
+  <div class="glass rounded-3xl p-8 md:p-16 grid md:grid-cols-2 gap-14 md:gap-20 items-center">
+
+  <div>
+    <h1 class="text-3xl md:text-5xl font-bold leading-tight text-center md:text-left">
       Instalación y mantenimiento de  
       <span class="text-sky-400">aires acondicionados</span>
     </h1>
-    <p class="mt-6 text-slate-300 max-w-xl">
+
+    <p class="mt-6 text-slate-300 max-w-xl mx-auto md:mx-0 text-center md:text-left">
       Servicio profesional para hogares y comercios. Técnicos capacitados,
       atención rápida y garantía por escrito.
     </p>
-    <div class="mt-10 flex gap-4">
+
+    <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
       <a href="#contacto"
-         class="px-6 py-3 rounded-full bg-sky-500 hover:bg-sky-400 transition shadow-lg shadow-sky-500/30">
+         class="px-6 py-3 rounded-full bg-sky-500 hover:bg-sky-400 transition shadow-lg shadow-sky-500/30 text-center">
         Pedir presupuesto
       </a>
+
       <a href="https://wa.me/549XXXXXXXXXX"
-         class="px-6 py-3 rounded-full border border-sky-400 text-sky-400 hover:bg-sky-400 hover:text-black transition">
+         class="px-6 py-3 rounded-full border border-sky-400 text-sky-400 hover:bg-sky-400 hover:text-black transition text-center">
         WhatsApp
       </a>
     </div>
   </div>
 
-  <div class="flex items-center justify-center gap-10 md:gap-14 md:-translate-x-10"
-     data-aos="zoom-in">
+  <div class="flex flex-col sm:flex-row items-center justify-center gap-8 md:gap-14 md:-translate-x-10">
 
-  <img src="img/logo.png"
-       alt="PM Servicios"
-       class="w-64 md:w-[360px]
-              logo-glow
-              hover:scale-105
-              transition-transform duration-700">
+    <img src="img/logo.png"
+         alt="PM Servicios"
+         class="w-40 sm:w-56 md:w-[360px] logo-glow hover:scale-105 transition-transform duration-700">
 
-  <img src="img/logo2.png"
-       alt="Certificación"
-       class="w-56 md:w-[320px]
-              logo-glow
-              hover:scale-105
-              transition-transform duration-700">
+    <img src="img/logo2.png"
+         alt="Certificación"
+         class="w-36 sm:w-48 md:w-[320px] logo-glow hover:scale-105 transition-transform duration-700">
+  </div>
 
 </div>
-
 </section>
 
 <!-- SERVICIOS -->
-<section class="container mx-auto px-6 py-24">
-  <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">
+<section id="servicios" class="container mx-auto px-6 py-20 md:py-24">
+  <h2 class="text-3xl font-bold text-center mb-16">
     Nuestros servicios
   </h2>
 
-  <div class="grid md:grid-cols-4 gap-8 mb-24">
+  <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8 mb-24">
 
-  <!-- Instalación -->
-  <div class="glass p-6 rounded-2xl transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:shadow-sky-500/20">
-    <svg class="w-10 h-10 text-sky-400 mb-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round"
-            d="M3 12h18M9 5l-6 7 6 7"/>
-    </svg>
-    <h3 class="text-lg font-semibold mb-1">Instalación</h3>
-    <p class="text-slate-300 text-sm">
-      Split, multisplit y equipos inverter.
-    </p>
+    <!-- Tus 4 cards exactamente iguales -->
+    <!-- (NO se modificó nada interno porque ya eran responsive) -->
+
+    <!-- Instalación -->
+    <div class="glass p-6 rounded-2xl transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:shadow-sky-500/20">
+      <svg class="w-10 h-10 text-sky-400 mb-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M3 12h18M9 5l-6 7 6 7"/>
+      </svg>
+      <h3 class="text-lg font-semibold mb-1">Instalación</h3>
+      <p class="text-slate-300 text-sm">
+        Split, multisplit y equipos inverter.
+      </p>
+    </div>
+
+    <!-- Mantenimiento -->
+    <div class="glass p-6 rounded-2xl transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:shadow-sky-500/20">
+      <svg class="w-10 h-10 text-sky-400 mb-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M12 6v6l4 2M12 2a10 10 0 100 20 10 10 0 000-20z"/>
+      </svg>
+      <h3 class="text-lg font-semibold mb-1">Mantenimiento</h3>
+      <p class="text-slate-300 text-sm">
+        Limpieza y control preventivo.
+      </p>
+    </div>
+
+    <!-- Reparaciones -->
+    <div class="glass p-6 rounded-2xl transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:shadow-sky-500/20">
+      <svg class="w-10 h-10 text-sky-400 mb-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M14.7 6.3l3 3L9 18H6v-3l8.7-8.7z"/>
+      </svg>
+      <h3 class="text-lg font-semibold mb-1">Reparaciones</h3>
+      <p class="text-slate-300 text-sm">
+        Diagnóstico y solución eficiente.
+      </p>
+    </div>
+
+    <!-- Comercial -->
+    <div class="glass p-6 rounded-2xl transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:shadow-sky-500/20">
+      <svg class="w-10 h-10 text-sky-400 mb-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M3 10h18M4 6h16v14H4z"/>
+      </svg>
+      <h3 class="text-lg font-semibold mb-1">Comercial</h3>
+      <p class="text-slate-300 text-sm">
+        Locales, oficinas y empresas.
+      </p>
+    </div>
+
   </div>
+</section>
 
-  <!-- Mantenimiento -->
-  <div class="glass p-6 rounded-2xl transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:shadow-sky-500/20">
-    <svg class="w-10 h-10 text-sky-400 mb-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round"
-            d="M12 6v6l4 2M12 2a10 10 0 100 20 10 10 0 000-20z"/>
-    </svg>
-    <h3 class="text-lg font-semibold mb-1">Mantenimiento</h3>
-    <p class="text-slate-300 text-sm">
-      Limpieza y control preventivo.
-    </p>
-  </div>
-
-  <!-- Reparaciones -->
-  <div class="glass p-6 rounded-2xl transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:shadow-sky-500/20">
-    <svg class="w-10 h-10 text-sky-400 mb-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round"
-            d="M14.7 6.3l3 3L9 18H6v-3l8.7-8.7z"/>
-    </svg>
-    <h3 class="text-lg font-semibold mb-1">Reparaciones</h3>
-    <p class="text-slate-300 text-sm">
-      Diagnóstico y solución eficiente.
-    </p>
-  </div>
-
-  <!-- Comercial -->
-  <div class="glass p-6 rounded-2xl transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:shadow-sky-500/20">
-    <svg class="w-10 h-10 text-sky-400 mb-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round"
-            d="M3 10h18M4 6h16v14H4z"/>
-    </svg>
-    <h3 class="text-lg font-semibold mb-1">Comercial</h3>
-    <p class="text-slate-300 text-sm">
-      Locales, oficinas y empresas.
-    </p>
-  </div>
-
-</div>
 <!-- CALCULO DE FRIGORIAS -->
-<section class="container mx-auto px-6 py-24">
-  <div class="grid md:grid-cols-2 gap-16 items-center">
+<section id="calculo" class="container mx-auto px-6 py-20 md:py-24">
+  <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
 
-    <!-- IMAGEN HABITACION -->
     <div class="rounded-3xl overflow-hidden shadow-xl">
       <img src="img/habitacionfull.jpeg"
            alt="Habitación climatizada"
            class="w-full h-full object-cover">
     </div>
 
-    <!-- CONTENIDO -->
-    <div class="relative glass p-12 rounded-3xl">
+    <div class="relative glass p-8 md:p-12 rounded-3xl text-center md:text-left">
 
       <h2 class="text-3xl font-bold mb-6">
         Cálculo de frigorías
@@ -222,13 +191,13 @@ body { font-family: 'Inter', sans-serif; }
         Nosotros te ayudamos
       </p>
 
-      <p class="text-slate-300 max-w-md mb-8">
+      <p class="text-slate-300 max-w-md mx-auto md:mx-0 mb-8">
         Respondiendo unas pocas preguntas,
         encontraremos el equipo perfecto para vos.
       </p>
 
       <a href="#"
-         class="inline-flex items-center gap-3
+         class="inline-flex items-center justify-center gap-3
                 bg-blue-600 hover:bg-blue-500 transition
                 px-6 py-4 rounded-xl font-semibold shadow-lg">
         Hacer cálculo de frigorías
@@ -239,7 +208,6 @@ body { font-family: 'Inter', sans-serif; }
         </svg>
       </a>
 
-      <!-- PERSONA -->
       <img src="img/persona.png"
            alt="Asesor"
            class="hidden md:block absolute right-[-40px] bottom-0 w-56 drop-shadow-xl">
@@ -248,57 +216,37 @@ body { font-family: 'Inter', sans-serif; }
   </div>
 </section>
 
-
-<!-- GALERÍA DE TRABAJOS -->
-<section class="container mx-auto px-6 py-24">
+<!-- GALERÍA -->
+<section id="trabajos" class="container mx-auto px-6 py-20 md:py-24">
   <h2 class="text-3xl font-bold text-center mb-16">
     Trabajos realizados
   </h2>
 
-  <div class="glass rounded-3xl p-10">
-    <div class="grid md:grid-cols-3 gap-8">
+  <div class="glass rounded-3xl p-6 md:p-10">
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
 
-      <!-- ITEM -->
       <div class="group rounded-2xl overflow-hidden shadow-lg">
-        <img src="img/work1.jpeg"
-             class="w-full h-56 object-cover
-                    transition-transform duration-500
-                    group-hover:scale-105">
+        <img src="img/work1.jpeg" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105">
       </div>
 
       <div class="group rounded-2xl overflow-hidden shadow-lg">
-        <img src="img/work2.jpeg"
-             class="w-full h-56 object-cover
-                    transition-transform duration-500
-                    group-hover:scale-105">
+        <img src="img/work2.jpeg" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105">
       </div>
 
       <div class="group rounded-2xl overflow-hidden shadow-lg">
-        <img src="img/work3.jpeg"
-             class="w-full h-56 object-cover
-                    transition-transform duration-500
-                    group-hover:scale-105">
+        <img src="img/work3.jpeg" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105">
       </div>
 
       <div class="group rounded-2xl overflow-hidden shadow-lg">
-        <img src="img/work4.jpeg"
-             class="w-full h-56 object-cover
-                    transition-transform duration-500
-                    group-hover:scale-105">
+        <img src="img/work4.jpeg" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105">
       </div>
 
       <div class="group rounded-2xl overflow-hidden shadow-lg">
-        <img src="img/work5.jpeg"
-             class="w-full h-56 object-cover
-                    transition-transform duration-500
-                    group-hover:scale-105">
+        <img src="img/work5.jpeg" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105">
       </div>
 
       <div class="group rounded-2xl overflow-hidden shadow-lg">
-        <img src="img/work6.jpeg"
-             class="w-full h-56 object-cover
-                    transition-transform duration-500
-                    group-hover:scale-105">
+        <img src="img/work6.jpeg" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105">
       </div>
 
     </div>
@@ -306,99 +254,56 @@ body { font-family: 'Inter', sans-serif; }
 </section>
 
 <!-- CLIENTES -->
-<section id="clientes" class="container mx-auto px-6 py-24">
+<section id="clientes" class="container mx-auto px-6 py-20 md:py-24">
   <h2 class="text-3xl font-bold text-center mb-16">
     Nuestros clientes
   </h2>
 
-  <div class="glass rounded-3xl px-16 py-14">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-14 items-center justify-items-center">
+  <div class="glass rounded-3xl px-6 md:px-16 py-10 md:py-14">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-14 items-center justify-items-center">
 
-      <img src="img/clientegrido.png" alt="Grido"
-           class="h-30 object-contain
-                  drop-shadow-[0_6px_10px_rgba(0,0,0,0.45)]">
-
-      <img src="img/clientebma.png" alt="BMA"
-           class="h-30 object-contain
-                  drop-shadow-[0_6px_10px_rgba(0,0,0,0.45)]">
-
-      <img src="img/clienteraro.png" alt="Loft Argentino"
-           class="h-30 object-contain
-                  drop-shadow-[0_6px_10px_rgba(0,0,0,0.45)]">
-
-      <img src="img/clientebgh.png" alt="Cliente"
-           class="h-30 object-contain
-                  drop-shadow-[0_6px_10px_rgba(0,0,0,0.45)]">
+      <img src="img/clientegrido.png" class="h-16 md:h-24 object-contain">
+      <img src="img/clientebma.png" class="h-16 md:h-24 object-contain">
+      <img src="img/clienteraro.png" class="h-16 md:h-24 object-contain">
+      <img src="img/clientebgh.png" class="h-16 md:h-24 object-contain">
 
     </div>
   </div>
 </section>
 
-
 <!-- MARCAS -->
-<section class="container mx-auto px-6 py-24">
+<section class="container mx-auto px-6 py-20 md:py-24">
   <p class="text-center text-slate-400 mb-12">
     Trabajamos con las principales marcas del mercado
   </p>
 
-  <!-- GLASS MISMO ANCHO QUE HERO -->
-  <div class="glass rounded-3xl px-16 py-14">
+  <div class="glass rounded-3xl px-6 md:px-16 py-10 md:py-14">
 
-<div class="flex items-center justify-between w-full">
+    <div class="flex flex-wrap items-center justify-center gap-8 md:gap-16">
 
-  <img src="img/brands/tcl.png" alt="TCL"
-       class="h-16 object-contain
-              drop-shadow-[0_6px_10px_rgba(0,0,0,0.45)]">
+      <img src="img/brands/tcl.png" class="h-12 md:h-16 object-contain">
+      <img src="img/brands/surrey.png" class="h-12 md:h-16 object-contain">
+      <img src="img/brands/midea.png" class="h-12 md:h-16 object-contain">
+      <img src="img/brands/york.png" class="h-12 md:h-16 object-contain">
+      <img src="img/brands/samsung.png" class="h-12 md:h-16 object-contain">
+      <img src="img/brands/philco.png" class="h-12 md:h-16 object-contain">
+      <img src="img/brands/lg.png" class="h-12 md:h-16 object-contain">
+      <img src="img/brands/bgh.png" class="h-12 md:h-16 object-contain">
 
-  <img src="img/brands/surrey.png" alt="Surrey"
-       class="h-16 object-contain brightness-110
-              drop-shadow-[0_6px_10px_rgba(0,0,0,0.45)]">
-
-  <img src="img/brands/midea.png" alt="Midea"
-       class="h-16 object-contain
-              drop-shadow-[0_6px_10px_rgba(0,0,0,0.45)]">
-
-  <img src="img/brands/york.png" alt="York"
-       class="h-16 object-contain brightness-110
-              drop-shadow-[0_6px_10px_rgba(0,0,0,0.45)]">
-
-  <img src="img/brands/samsung.png" alt="Samsung"
-       class="h-16 object-contain brightness-125
-              drop-shadow-[0_6px_10px_rgba(0,0,0,0.45)]">
-
-  <img src="img/brands/philco.png" alt="Philco"
-       class="h-16 object-contain brightness-125
-              drop-shadow-[0_6px_10px_rgba(0,0,0,0.45)]">
-
-  <img src="img/brands/lg.png" alt="LG"
-       class="h-16 object-contain
-              drop-shadow-[0_6px_10px_rgba(0,0,0,0.45)]">
-
-  <img src="img/brands/bgh.png" alt="BGH"
-       class="h-16 object-contain brightness-125
-              drop-shadow-[0_6px_10px_rgba(0,0,0,0.45)]">
-
-</div>
-
-
+    </div>
+  </div>
 </section>
 
 <!-- UBICACIÓN -->
-<section class="container mx-auto px-6 py-24">
+<section class="container mx-auto px-6 py-20 md:py-24">
   <div class="relative rounded-3xl overflow-hidden">
 
-    <!-- IMAGEN MAPA -->
-    <img
-      src="img/mapa.png"
-      alt="Ubicación PM Servicios"
-      class="w-full h-[420px] object-cover">
+    <img src="img/mapa.png" class="w-full h-[300px] md:h-[420px] object-cover">
 
-    <!-- OVERLAY OSCURO -->
     <div class="absolute inset-0 bg-black/50"></div>
 
-    <!-- CARD GLASS -->
-    <div class="absolute inset-0 flex items-center justify-center">
-      <div class="glass rounded-3xl p-10 max-w-md text-center">
+    <div class="absolute inset-0 flex items-center justify-center px-6">
+      <div class="glass rounded-3xl p-6 md:p-10 max-w-md text-center">
 
         <h3 class="text-2xl font-bold mb-2">
           Nuestra ubicación
@@ -408,11 +313,9 @@ body { font-family: 'Inter', sans-serif; }
           Encontranos fácilmente y visitanos cuando quieras.
         </p>
 
-        <a
-          href="https://maps.app.goo.gl/Lud3TB4i8A6mipzQ9?g_st=awb"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-3
+        <a href="https://maps.app.goo.gl/Lud3TB4i8A6mipzQ9?g_st=awb"
+           target="_blank"
+           class="inline-flex items-center gap-3
                  bg-sky-500 hover:bg-sky-400 transition
                  px-6 py-3 rounded-full font-semibold
                  shadow-lg shadow-sky-500/30">
@@ -432,10 +335,9 @@ body { font-family: 'Inter', sans-serif; }
   </div>
 </section>
 
-
 <!-- CTA -->
-<section id="contacto" class="container mx-auto px-6 py-32 text-center">
-  <h2 class="text-4xl font-bold" data-aos="zoom-in">
+<section id="contacto" class="container mx-auto px-6 py-20 md:py-32 text-center">
+  <h2 class="text-3xl md:text-4xl font-bold">
     Pedí tu presupuesto hoy
   </h2>
   <p class="mt-4 text-slate-300">
@@ -443,24 +345,19 @@ body { font-family: 'Inter', sans-serif; }
   </p>
 </section>
 
-<!-- FOOTER FINAL FULL WIDTH REAL -->
-<footer
-  class="relative left-1/2 right-1/2 -mx-[50vw] w-screen
-         bg-slate-800 text-slate-300 mt-32">
+<!-- FOOTER -->
+<footer class="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-slate-800 text-slate-300 mt-20 md:mt-32">
 
-  <!-- CONTENIDO CENTRADO -->
-  <div class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-4 gap-12">
+  <div class="max-w-7xl mx-auto px-6 py-14 md:py-20 grid sm:grid-cols-2 md:grid-cols-4 gap-12">
 
-    <!-- Marca -->
     <div>
-      <img src="img/logo.png" alt="PM Servicios" class="h-14 mb-4">
+      <img src="img/logo.png" class="h-12 md:h-14 mb-4">
       <p class="text-sm leading-relaxed">
         Más de 20 años brindando soluciones en climatización
         para hogares y comercios.
       </p>
     </div>
 
-    <!-- Locales -->
     <div>
       <h4 class="font-semibold text-white mb-4">Nuestros locales</h4>
       <ul class="space-y-2 text-sm">
@@ -468,7 +365,6 @@ body { font-family: 'Inter', sans-serif; }
       </ul>
     </div>
 
-    <!-- Links -->
     <div>
       <h4 class="font-semibold text-white mb-4">Links útiles</h4>
       <ul class="space-y-2 text-sm">
@@ -480,7 +376,6 @@ body { font-family: 'Inter', sans-serif; }
       </ul>
     </div>
 
-    <!-- Redes -->
     <div>
       <h4 class="font-semibold text-white mb-4">Redes sociales</h4>
       <ul class="space-y-2 text-sm">
@@ -492,44 +387,16 @@ body { font-family: 'Inter', sans-serif; }
 
   </div>
 
-  <!-- COPYRIGHT -->
   <div class="border-t border-white/10 text-center py-6 text-sm text-slate-400">
     © 2026 PM Servicios · NG Software
   </div>
 
 </footer>
 
-
-
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
 AOS.init({ once:true, duration:900 });
-
-/* ===== JS LIVIANO DEL CARRUSEL ===== */
-const items = document.querySelectorAll('.coverflow-item');
-let current = 0;
-
-function renderCoverflow() {
-  items.forEach((item, i) => {
-    const offset = i - current;
-    item.style.transform = `
-      translateX(${offset * 180}px)
-      scale(${offset === 0 ? 1.25 : 0.85})
-      rotateY(${offset * -30}deg)
-    `;
-    item.style.opacity = Math.abs(offset) > 3 ? 0 : 1;
-    item.style.zIndex = 10 - Math.abs(offset);
-  });
-}
-
-setInterval(() => {
-  current = (current + 1) % items.length;
-  renderCoverflow();
-}, 2800);
-
-renderCoverflow();
 </script>
 
 </body>
 </html>
-
