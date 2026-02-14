@@ -28,6 +28,30 @@ body { font-family: 'Inter', sans-serif; }
   filter: drop-shadow(0 35px 45px rgba(14,165,233,.35))
           drop-shadow(0 15px 30px rgba(0,0,0,.7));
 }
+  .slide{
+  transition: opacity 1s ease, transform 6s ease;
+  transform: scale(1.05);
+}
+
+.slide.active{
+  opacity:1;
+  transform: scale(1);
+}
+
+.dot{
+  width:10px;
+  height:10px;
+  border-radius:999px;
+  background:#94a3b8;
+  cursor:pointer;
+  transition:all .3s;
+}
+
+.dot.active{
+  width:28px;
+  background:#38bdf8;
+}
+
 </style>
 </head>
 
@@ -217,41 +241,45 @@ body { font-family: 'Inter', sans-serif; }
 </section>
 
 <!-- GALERÍA -->
+<!-- GALERÍA / CARRUSEL -->
 <section id="trabajos" class="container mx-auto px-6 py-20 md:py-24">
   <h2 class="text-3xl font-bold text-center mb-16">
     Trabajos realizados
   </h2>
 
-  <div class="glass rounded-3xl p-6 md:p-10">
-    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+  <div class="glass rounded-3xl p-4 md:p-8 relative overflow-hidden">
 
-      <div class="group rounded-2xl overflow-hidden shadow-lg">
-        <img src="img/work1.jpeg" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105">
-      </div>
+    <!-- SLIDES -->
+    <div id="carousel" class="relative h-[320px] md:h-[520px] rounded-2xl overflow-hidden">
 
-      <div class="group rounded-2xl overflow-hidden shadow-lg">
-        <img src="img/work2.jpeg" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105">
-      </div>
+      <img src="img/work1.jpeg" class="slide absolute inset-0 w-full h-full object-cover opacity-100">
+      <img src="img/work2.jpeg" class="slide absolute inset-0 w-full h-full object-cover opacity-0">
+      <img src="img/work3.jpeg" class="slide absolute inset-0 w-full h-full object-cover opacity-0">
+      <img src="img/work4.jpeg" class="slide absolute inset-0 w-full h-full object-cover opacity-0">
+      <img src="img/work5.jpeg" class="slide absolute inset-0 w-full h-full object-cover opacity-0">
+      <img src="img/work6.jpeg" class="slide absolute inset-0 w-full h-full object-cover opacity-0">
 
-      <div class="group rounded-2xl overflow-hidden shadow-lg">
-        <img src="img/work3.jpeg" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105">
-      </div>
+      <!-- overlay degradado -->
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
 
-      <div class="group rounded-2xl overflow-hidden shadow-lg">
-        <img src="img/work4.jpeg" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105">
-      </div>
+      <!-- BOTONES -->
+      <button id="prev"
+        class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 backdrop-blur px-4 py-3 rounded-full transition">
+        ❮
+      </button>
 
-      <div class="group rounded-2xl overflow-hidden shadow-lg">
-        <img src="img/work5.jpeg" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105">
-      </div>
+      <button id="next"
+        class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 backdrop-blur px-4 py-3 rounded-full transition">
+        ❯
+      </button>
 
-      <div class="group rounded-2xl overflow-hidden shadow-lg">
-        <img src="img/work6.jpeg" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105">
-      </div>
+      <!-- DOTS -->
+      <div id="dots" class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3"></div>
 
     </div>
   </div>
 </section>
+
 
 <!-- CLIENTES -->
 <section id="clientes" class="container mx-auto px-6 py-20 md:py-24">
@@ -398,6 +426,66 @@ body { font-family: 'Inter', sans-serif; }
 AOS.init({ once:true, duration:900 });
 </script>
 
+  <script>
+const slides = document.querySelectorAll('.slide');
+const next = document.getElementById('next');
+const prev = document.getElementById('prev');
+const dotsContainer = document.getElementById('dots');
+
+let index = 0;
+let interval;
+
+// crear dots
+slides.forEach((_,i)=>{
+  const d=document.createElement('div');
+  d.className='dot'+(i===0?' active':'');
+  d.onclick=()=>goTo(i);
+  dotsContainer.appendChild(d);
+});
+
+const dots=document.querySelectorAll('.dot');
+
+function show(i){
+  slides.forEach(s=>s.classList.remove('active'));
+  dots.forEach(d=>d.classList.remove('active'));
+
+  slides[i].classList.add('active');
+  dots[i].classList.add('active');
+}
+
+function nextSlide(){
+  index=(index+1)%slides.length;
+  show(index);
+}
+
+function prevSlide(){
+  index=(index-1+slides.length)%slides.length;
+  show(index);
+}
+
+function goTo(i){
+  index=i;
+  show(index);
+  reset();
+}
+
+next.onclick=()=>{nextSlide();reset();}
+prev.onclick=()=>{prevSlide();reset();}
+
+function start(){
+  interval=setInterval(nextSlide,4500);
+}
+
+function reset(){
+  clearInterval(interval);
+  start();
+}
+
+show(0);
+start();
+</script>
+
 </body>
 </html>
+
 
