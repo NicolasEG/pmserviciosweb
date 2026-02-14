@@ -51,6 +51,10 @@ body { font-family: 'Inter', sans-serif; }
   width:28px;
   background:#38bdf8;
 }
+  .whatsapp-float.up{
+  bottom:90px;
+}
+
 
 </style>
 </head>
@@ -516,9 +520,30 @@ start();
     color:#ffd700;
 }
 </style>
+  <script>
+const wsp = document.querySelector('.whatsapp-float');
+const firma = document.querySelector('.firma-ng');
+
+window.addEventListener('scroll', () => {
+
+  if(!firma) return;
+
+  const firmaTop = firma.getBoundingClientRect().top;
+  const windowHeight = window.innerHeight;
+
+  if (firmaTop < windowHeight - 80){
+    wsp.classList.add('up');
+  } else {
+    wsp.classList.remove('up');
+  }
+
+});
+</script>
+
 
 </body>
 </html>
+
 
 
 
